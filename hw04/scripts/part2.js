@@ -1,4 +1,6 @@
 //vanja
+//1. getData function pulls tweet news in the language that i choose.
+//i used same search term but results were displayed in 3 differnet languages 
 let language = 'English'
 let languageCode = 'en'
 let jsonData

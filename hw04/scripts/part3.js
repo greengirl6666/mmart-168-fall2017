@@ -11,7 +11,11 @@ const setLanguage = (code) => {
         language = 'Russian'
     } else if (code === 'es') {
         language = 'Spanish'
-    } else {
+    }
+    else if (code === 'bs') {
+        language = 'Bosnian'
+    }
+    else {
         language = 'English'
     }
     document.getElementById('language').innerHTML = language
@@ -46,26 +50,50 @@ const getData = () => {
             console.log(json.statuses)
 
             // clear out existing tweets:
-            clearData()
-
-            // output the text of the first tweet:
-            status = json.statuses[0]
-            div = document.createElement("div")
-            div.className = "tweet"
-            textNode = document.createTextNode(status.text)
-            div.appendChild(textNode)
-            document.getElementById("results").appendChild(div)
-
-            // output the text of the second tweet:
-            status = json.statuses[1]
-            div = document.createElement("div")
-            div.className = "tweet"
-            textNode = document.createTextNode(status.text)
-            div.appendChild(textNode)
-            document.getElementById("results").appendChild(div)
+            // clearData()
+            //
+            // // output the text of the first tweet:
+            // status = json.statuses[0]
+            // div = document.createElement("div")
+            // div.className = "tweet"
+            // textNode = document.createTextNode(status.text)
+            // div.appendChild(textNode)
+            // document.getElementById("results").appendChild(div)
+            //
+            // // output the text of the second tweet:
+            // status = json.statuses[1]
+            // div = document.createElement("div")
+            // div.className = "tweet"
+            // textNode = document.createTextNode(status.text)
+            // div.appendChild(textNode)
+            // document.getElementById("results").appendChild(div)
+            //
+            // // output the text of the second tweet:
+            // status = json.statuses[2]
+            // div = document.createElement("div")
+            // div.className = "tweet"
+            // textNode = document.createTextNode(status.text)
+            // div.appendChild(textNode)
+            // document.getElementById("results").appendChild(div)
+            //
+            // // output the text of the second tweet:
+            // status = json.statuses[3]
+            // div = document.createElement("div")
+            // div.className = "tweet"
+            // textNode = document.createTextNode(status.text)
+            // div.appendChild(textNode)
+            // document.getElementById("results").appendChild(div)
+            //
+            // // output the text of the second tweet:
+            // status = json.statuses[4]
+            // div = document.createElement("div")
+            // div.className = "tweet"
+            // textNode = document.createTextNode(status.text)
+            // div.appendChild(textNode)
+            // document.getElementById("results").appendChild(div)
 
             // 1. Describe what you think this code is doing.
-
+            //  My console gave me the answer that jsonData is undefined?
             // 2. output the text of the third tweet:
 
             // 3. output the text of the fourth tweet:
@@ -76,13 +104,13 @@ const getData = () => {
             //    and ending right before this comment. Then, un-comment the
             //    code below:
 
-            /*json.statuses.forEach(function (status) {
+            json.statuses.forEach(function (status) {
                 div = document.createElement("div")
                 div.className = "tweet"
                 textNode = document.createTextNode(status.text)
                 div.appendChild(textNode)
                 document.getElementById("results").appendChild(div)
-            })*/
+            })
 
         })
 };
