@@ -7,16 +7,34 @@ const makeStationList = () => {
         .then((response) => {
             return response.json()
         })
-        .then((json) => {
+        .then((json) => { //do something with data
             json = json.root
-            console.log(json)
+            //FOR LOOP option
+            //const stations = json.stations.station
+            //for(let i = 0; i < 10; i++) {
+            //  console.log(stations[i].name)
+            //}
+            //FOR EACH loop
+            json.stations.station.forEach((station) => {
+              console.log(station.name)
+
+            //create option element
+            const option = document.createElement("option")
+            option.value = station.abbr
+            option.innerHTML = station.name
+            document.getElementById('station_list').appendChild(option)
+          })
+
+               //  console.log(json.stations.station[0].name)
+            //console.log(json.stations.station [1].name)
+            //console.log(json.stations.station [3].name)
 
             // PART III.A.: Use a loop to populate the select menu with *ALL*
             // of the stations that are returned from the BART data feed:
-            const option1 = document.createElement("option")
-            option1.value = 'DBRK'
-            option1.innerHTML = 'Downtown Berkeley'
-            document.getElementById('station_list').appendChild(option1)
+            //const option1 = document.createElement("option")
+            //option1.value = 'DBRK'
+            //option1.innerHTML = 'Downtown Berkeley'
+            //document.getElementById('station_list').appendChild(option1)
         })
         .catch((err) => {
             console.log(err)
